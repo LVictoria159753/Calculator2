@@ -21,7 +21,7 @@ buttons.forEach((button) => {
 //num1 and num2 variables filled
 let num1= '';
 let num2= '';
-let operator; 
+let operator=''; 
 
 num.forEach((button) => {
     // and for each one we add a 'click' listener
@@ -41,19 +41,7 @@ num.forEach((button) => {
     });
 });
 
-/*
-num.forEach((button) => {
-    // and for each one we add a 'click' listener
-    button.addEventListener('click', (e) => {
-     
-    while (num1 !== '' && num2 !==''){
-        num3=e.target.innerHTML; 
-        console.log(num3);
-        return num3;
-    }
-    });
-});
-        */
+
 
 //operators filled
 
@@ -80,7 +68,7 @@ ops.forEach(button1 => {
                         break;
             case "*":
                   console.log(multiply(num1, num2));
-                    result=mulitiply(num1, num2);
+                    result=multiply(num1, num2);
                     result= result.toFixed(2);
                         break;
             case "/":
@@ -88,18 +76,29 @@ ops.forEach(button1 => {
                     result=divide(num1, num2);
                     result= result.toFixed(2);
                         break;
+
+        
         }
         document.getElementById("lower-screen").innerHTML= result;
         }
     });
 });
-    
+
+
 
 
 //Clear Button- refresh content
-document.querySelector(".clear").addEventListener("click", ()=>{
-    window.location.reload()
-});
+document.querySelector(".clear").addEventListener("click", clearAll);
+
+function clearAll()
+{
+    num1= '';
+    num2= '';
+    operator=''; 
+    console.log ("clear");
+    document.getElementById("upper-screen").innerHTML= num1;
+    document.getElementById("lower-screen").innerHTML= num1;
+}
 
 //document.querySelector(".equals").addEventListener("click",()=>{
 
@@ -129,18 +128,9 @@ y.forEach((buttonops) => {
 }
 });
 
-/*
-addEventListener('click',(e)=>{
-        if ( e.target.innerHTML=== "=") {
-            x.disabled = true ;//button remains disabled
-        }
-        } else {
-            x.disabled = false; //button is enabled
-        }
-    });
-});
 
-*/
+
+
 /*
 
 Scrap Code 
@@ -153,5 +143,31 @@ function operate(operator, num1, num2) {
     if (operator === "*") return multiply(num1, num2);
     if (operator === "/") return divide(num1, num2);
 }
+
+addEventListener('click',(e)=>{
+        if ( e.target.innerHTML=== "=") {
+            x.disabled = true ;//button remains disabled
+        }
+        } else {
+            x.disabled = false; //button is enabled
+        }
+    });
+});
+
+let newInput='';
+num.forEach((button) => {
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', (e) => {
+
+        do {
+            result=num1;
+            newInput=e.target.innerHTML; 
+            newInput=parseInt(newInput);
+            newInput=num2;
+        }
+    if (num1 !== '' && num2 !=='' && operator!=''){
+    }
+    });
+});
 
 */
