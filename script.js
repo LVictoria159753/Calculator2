@@ -70,19 +70,23 @@ ops.forEach(button1 => {
             case "+":
                 console.log(add(num1, num2));
                     result= add(num1, num2);
+                    result= result.toFixed(2);
                         break;
   
             case "-":
                 console.log(subtract(num1, num2));
                     result=subtract(num1, num2);
+                    result= result.toFixed(2);
                         break;
             case "*":
                   console.log(multiply(num1, num2));
                     result=mulitiply(num1, num2);
+                    result= result.toFixed(2);
                         break;
             case "/":
                 console.log(divide(num1, num2));
                     result=divide(num1, num2);
+                    result= result.toFixed(2);
                         break;
         }
         document.getElementById("lower-screen").innerHTML= result;
@@ -114,15 +118,27 @@ document.querySelector(".clear").addEventListener("click", ()=>{
     function divide(num1, num2) {
         return num1 / num2;
     }
+
+
+x=document.querySelector(".odd").disabled= true;
+
+y=document.querySelectorAll('.operator');
+y.forEach((buttonops) => {
+    buttonops.onclick  = () =>{
+    document.querySelector(".odd").disabled= false;
+}
+});
+
 /*
-x=document.getElementsByClassName(".equals")
-    function dis() {
-        if (document.querySelector(".equals").value === "") {
-            x.disabled = false; //button remains disabled
-        } else {
-            x.disabled = true; //button is enabled
+addEventListener('click',(e)=>{
+        if ( e.target.innerHTML=== "=") {
+            x.disabled = true ;//button remains disabled
         }
-    }
+        } else {
+            x.disabled = false; //button is enabled
+        }
+    });
+});
 
 */
 /*
