@@ -1,0 +1,126 @@
+/* Screen Display of the Calculator */
+body{
+    background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(198,189,83,1) 75%, rgba(227,188,63,1) 88%, rgba(238,188,56,1) 93%, rgba(253,187,45,1) 100%);
+}
+
+#screen{
+    border: solid 1px rgb(0, 195, 255);
+    width:350px ;
+    height:100px ;
+}
+
+#upper-screen{
+    padding:2px;
+    height:15px;
+    margin: 10px;
+    display:flex;
+    justify-content: flex-end;
+
+}
+
+#lower-screen{
+
+    padding:2px;
+    margin: 10px;
+    height: 30px;
+    display:flex;
+    justify-content: flex-end;
+}
+/* End */
+
+
+
+/* */
+#center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px black;
+    height: 100vh;
+}
+/* Calculator Outer Shell */
+#wrapper{
+    border: solid 2px rgb(0, 255, 76);
+    width:700px ;
+    height:410px ;
+    padding: 10px;
+
+}
+
+#top{
+    border: solid 2px rgb(46, 29, 109);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+#top-left{
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.clear, .backspace{
+padding: 30px;
+border-radius: 10px;
+margin-right:2.25em;
+background-color: transparent;
+border-color: rgb(200, 255, 0);
+font-size: 14px;
+
+}
+
+#numbers{
+    border: solid 1px gold;
+   
+}
+
+#ops{
+    border: solid 1px pink;
+    margin: 10px;
+    font-size: 16px;
+    display:center
+    
+
+}
+
+#container2{
+    border: solid 2px rgb(59, 4, 52);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.operator{
+    padding: 20px;
+    margin: 10px;
+    background-color: transparent;
+    border-color: rgb(19, 230, 245);
+    font-size: large;
+    border-radius: 5;
+}
+
+.num {
+    padding: 20px;
+    margin: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    border-color: rgb(166, 207, 17);
+    border-radius: 2px;
+    font-size: large;
+ 
+}
+
+.odd{
+    border-color: rgb(168, 29, 64);
+    padding: 20px;
+    width: 700px;
+    background-color: transparent;
+    font-size: larger;
+}
+
