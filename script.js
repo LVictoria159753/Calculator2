@@ -41,6 +41,20 @@ num.forEach((button) => {
     });
 });
 
+/*
+num.forEach((button) => {
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', (e) => {
+     
+    while (num1 !== '' && num2 !==''){
+        num3=e.target.innerHTML; 
+        console.log(num3);
+        return num3;
+    }
+    });
+});
+        */
+
 //operators filled
 
 ops.forEach(button1 => {
@@ -64,11 +78,11 @@ ops.forEach(button1 => {
                         break;
             case "*":
                   console.log(multiply(num1, num2));
-                    result= multiply(num1, num2);
+                    result=mulitiply(num1, num2);
                         break;
             case "/":
                 console.log(divide(num1, num2));
-                    result= divide(num1, num2);
+                    result=divide(num1, num2);
                         break;
         }
         document.getElementById("lower-screen").innerHTML= result;
@@ -100,8 +114,17 @@ document.querySelector(".clear").addEventListener("click", ()=>{
     function divide(num1, num2) {
         return num1 / num2;
     }
+/*
+x=document.getElementsByClassName(".equals")
+    function dis() {
+        if (document.querySelector(".equals").value === "") {
+            x.disabled = false; //button remains disabled
+        } else {
+            x.disabled = true; //button is enabled
+        }
+    }
 
-
+*/
 /*
 
 Scrap Code 
