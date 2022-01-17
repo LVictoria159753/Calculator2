@@ -2,16 +2,19 @@ let output = document.getElementById("output");
 let result = document.getElementById("result");
 let num= document.querySelectorAll(".num");
 let ops= document.querySelectorAll(".operator")
+let lowerscreen=document.getElementById("lower-screen");
+let upperscreen=document.getElementById("upper-screen");
 
 
 //clicking a button and printing it out on the screen
 const buttons = document.querySelectorAll('button');
 
+let x;
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
   // and for each one we add a 'click' listener
   button.addEventListener('click', () => {
-    let x=button.id;
+     x=button.id;
     document.getElementById("upper-screen").innerHTML+=x;
     
   });
@@ -27,20 +30,17 @@ num.forEach((button) => {
     // and for each one we add a 'click' listener
     button.addEventListener('click', (e) => {
       if (num1=== ''){
-        num1 = e.target.innerHTML;
-        num1=parseInt(num1);
+        num1 += e.target.innerHTML;
             console.log("num1:" + num1); //Print first number
-            document.getElementById("lower-screen").innerHTML=num1;
+            lowerscreen.innerHTML=num1;
       }
       else{
         num2= e.target.innerText;
-        num2= parseInt(num2);
             console.log("num2:" + num2); // Print second number
-            document.getElementById("lower-screen").innerHTML=num2;
+            lowerscreen.innerHTML=num2;
       }
     });
 });
-
 
 
 //operators filled
@@ -50,10 +50,13 @@ ops.forEach(button1 => {
         if (e.target.innerHTML !== "=") {
             operator= e.target.innerHTML;
                 console.log (operator);
-                document.getElementById("lower-screen").innerHTML=operator;
+                lowerscreen.innerHTML=operator;
+               
         }
         else {
-            document.getElementById("lower-screen").innerHTML=operator;
+            num2= parseInt(num2);
+            num1=parseInt(num1);
+            lowerscreen.innerHTML=operator;
         switch (operator){  // Calculate and print output
             case "+":
                 console.log(add(num1, num2));
@@ -79,12 +82,10 @@ ops.forEach(button1 => {
 
         
         }
-        document.getElementById("lower-screen").innerHTML= result;
+        lowerscreen.innerHTML= result;
         }
     });
 });
-
-
 
 
 //Clear Button- refresh content
@@ -96,9 +97,36 @@ function clearAll()
     num2= '';
     operator=''; 
     console.log ("clear");
-    document.getElementById("upper-screen").innerHTML= num1;
-    document.getElementById("lower-screen").innerHTML= num1;
+    upperscreen.innerHTML= num1;
+    lowerscreen.innerHTML= num1;
 }
+
+//disable the equals button until the operator command is clicked
+x=document.querySelector(".odd").disabled= true;
+
+y=document.querySelectorAll('.operator');
+y.forEach((buttonops) => {
+    buttonops.onclick  = () =>{
+    document.querySelector(".odd").disabled= false;
+}
+});
+
+//backspace function
+let backspace = document.querySelector('.backspace').addEventListener('click', ()=>{
+    if (num1 != '' && num2 != ''){
+            num2 = '';
+            console.log ("num2 : " + num2);
+            lowerscreen.innerHTML=num2;
+            upperscreen.innerHTML+= num1;
+    }
+    if  (num1 != ''){
+        clearAll ();
+    }
+    if (ops){
+        upperscreen.innerHTML+= num1;
+    }
+            
+});
 
 //document.querySelector(".equals").addEventListener("click",()=>{
 
@@ -117,18 +145,6 @@ function clearAll()
     function divide(num1, num2) {
         return num1 / num2;
     }
-
-
-x=document.querySelector(".odd").disabled= true;
-
-y=document.querySelectorAll('.operator');
-y.forEach((buttonops) => {
-    buttonops.onclick  = () =>{
-    document.querySelector(".odd").disabled= false;
-}
-});
-
-
 
 
 /*
